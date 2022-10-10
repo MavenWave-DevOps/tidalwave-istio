@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: istio-ingress
+
+helmCharts:
+- name: gateway
+  releaseName: istio-ingress
+  includeCRDs: true
+  version: 1.15.1
+  namespace: istio-ingress
+  repo: https://istio-release.storage.googleapis.com/charts
